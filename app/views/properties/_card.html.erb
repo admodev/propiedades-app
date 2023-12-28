@@ -7,7 +7,9 @@
   <p>Área: <%= property.area %> m²</p>
   <p>Habitaciones: <%= property.bedrooms %></p>
   <p>Baños: <%= property.bathrooms %></p>
-  <%= link_to 'Ver Detalles', property_path(property) %>
+  <div id="properties-button">
+    <%= link_to 'Ver Detalles', property_path(property) %>
+  </div>
   <% if current_user && current_user == property.user %>
       <%= link_to 'Editar', edit_property_path(property) %>
       <%= link_to 'Eliminar', property_path(property), method: :delete %>

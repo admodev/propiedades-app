@@ -13,8 +13,14 @@
 <%= simple_format @property.description %>
 
 <% if current_user && current_user == @property.user %>
-  <%= link_to 'Editar Propiedad', edit_property_path(@property) %>
-  <%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
+  <div id="properties-secondary-button">
+    <%= link_to 'Editar Propiedad', edit_property_path(@property) %>
+  </div>
+  <div id="properties-secondary-button">
+    <%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
+  </div>
 <% end %>
 
-<%= link_to 'Volver', url_for(:back) %>
+<div id="properties-secondary-button">
+  <%= link_to 'Volver', url_for(:back) %>
+</div>

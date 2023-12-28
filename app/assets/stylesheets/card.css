@@ -1,0 +1,17 @@
+#properties-button {
+	background-color: #CC5656;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 22px;
+  padding: 1rem 3rem;
+  text-align: center;
+  border: none;
+  display: block;
+}
+
+#properties-secondary-button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+}

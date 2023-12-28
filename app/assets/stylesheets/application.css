@@ -21,3 +21,21 @@
   grid-column-gap: 15px;
   grid-row-gap: 15px;
 }
+
+#properties-secondary-button {
+  font-family: Roboto, sans-serif;
+  width: max-content;
+  margin: 5px;
+  font-weight: 0;
+  font-size: 14px;
+  color: #fff;
+  background-color: #CC5656;
+  padding: 10px 30px;
+  border: 2px solid #CC5656;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 12px;
+  transition : 1000ms;
+  transform: translateY(0);
+  cursor: pointer;
+  }
+  

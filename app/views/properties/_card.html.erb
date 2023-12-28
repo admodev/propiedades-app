@@ -10,8 +10,14 @@
   <div id="properties-button">
     <%= link_to 'Ver Detalles', property_path(property) %>
   </div>
+  <div id="properties-secondary-button-container">
   <% if current_user && current_user == property.user %>
-      <%= link_to 'Editar', edit_property_path(property) %>
-      <%= link_to 'Eliminar', property_path(property), method: :delete %>
-    <% end %>
+      <div id="properties-secondary-button">
+        <%= link_to 'Editar', edit_property_path(property) %>
+      </div>
+      <div id="properties-secondary-button">
+        <%= link_to 'Eliminar', property_path(property), method: :delete %>
+      </div>
+  <% end %>
+  </div>
 </div>

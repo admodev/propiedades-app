@@ -39,7 +39,7 @@
 }
 
 #menu li a:hover {
-	color: #0099CC;
+	color: #ff1100a1;
 	background: #F2F2F2;
 }
 
@@ -72,17 +72,6 @@
 	float: right;
 	top: 12px;
 	right: 100px;
-}
-
-#properties-button {
-	background-color: #ff1100a1;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 22px;
-  padding: 1rem 3rem;
-  text-align: center;
-  border: none;
-  display: block;
 }
 
 @media screen and (max-width: 800px){

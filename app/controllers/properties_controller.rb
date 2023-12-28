@@ -29,7 +29,7 @@ class PropertiesController < ApplicationController
 
   def update
     if @property.update(property_params)
-      redirect_to @property, notice: 'Propiedad actualizada exitosamente!'
+      redirect_to @property, notice: 'Propiedad actualizada exitosamente.'
     else
       render :edit
     end

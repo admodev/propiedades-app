@@ -17,6 +17,7 @@
     <p>Habitaciones: <%= property.bedrooms %></p>
     <p>Baños: <%= property.bathrooms %></p>
     <%= link_to 'Ver Detalles', property_path(property) %>
+    <%= link_to 'Eliminar', property_path(property), method: :delete, data: { confirm: '¿Estás seguro?' } %>
   </div>
 <% end %>
 

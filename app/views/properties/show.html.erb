@@ -4,9 +4,14 @@
   <%= image_tag @property.photo.url, class: "property-image" %>
 <% end %>
 
+<p>Direccion: <%= @property.address %></p>
 <p>Precio: <%= @property.price %> <%= @property.currency %></p>
 <p>Área: <%= @property.area %> m²</p>
 <p>Habitaciones: <%= @property.bedrooms %></p>
 <p>Baños: <%= @property.bathrooms %></p>
 
 <%= simple_format @property.description %>
+
+<%= link_to 'Editar Propiedad', edit_property_path(@property) %>
+<%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+<%= link_to 'Volver', properties_path %>

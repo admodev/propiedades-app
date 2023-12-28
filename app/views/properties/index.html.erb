@@ -1,0 +1,23 @@
+<h1>Propiedades: </h1>
+
+<% if user_signed_in? %>
+    <%= link_to 'Agregar Propiedad', new_property_path %>
+<% end %>
+
+<%= will_paginate @properties %>
+
+<% @properties.each do |property| %>
+  <div class="property-card">
+    <% if property.photo.attached? %>
+      <%= image_tag property.photo.url, class: "property-image" %>
+    <% end %>
+    <h3><%= property.type %></h3>
+    <p>Precio: <%= property.price %> <%= property.currency %></p>
+    <p>Área: <%= property.area %> m²</p>
+    <p>Habitaciones: <%= property.bedrooms %></p>
+    <p>Baños: <%= property.bathrooms %></p>
+    <%= link_to 'Ver Detalles', property_path(property) %>
+  </div>
+<% end %>
+
+<%= will_paginate @properties %>

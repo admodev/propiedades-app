@@ -1,6 +1,7 @@
 <h1>Editar Propiedad</h1>
 
-<%= form_with(model: @property, local: true) do |form| %>
-  <%= render 'form', form: form %>
-  <%= form.submit 'Actualizar Propiedad' %>
-<% end %>
+<%= render 'form', form: @property %>
+
+<div id="properties-secondary-button">
+  <%= link_to 'Volver', properties_path %>
+</div>

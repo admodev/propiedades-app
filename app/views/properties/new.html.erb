@@ -1,0 +1,6 @@
+<h1>Nueva Propiedad</h1>
+
+<%= form_with(model: @property, local: true) do |form| %>
+  <%= render 'form', form: form %>
+  <%= form.submit 'Crear Propiedad' %>
+<% end %>

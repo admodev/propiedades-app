@@ -1,0 +1,24 @@
+<div class="property-card">
+  <% if property.photo.attached? %>
+    <%= image_tag property.photo.url, class: "property-image" %>
+  <% end %>
+  <h3><%= property.type %></h3>
+  <p>Precio: <%= property.price %> <%= property.currency %></p>
+  <p>Precio en USD: <%= number_to_currency(property.price_usd, unit: 'USD') %></p>
+  <p>Área: <%= property.area %> m²</p>
+  <p>Habitaciones: <%= property.bedrooms %></p>
+  <p>Baños: <%= property.bathrooms %></p>
+  <div id="properties-button">
+    <%= link_to 'Ver Detalles', property_path(property) %>
+  </div>
+  <div id="properties-secondary-button-container">
+  <% if current_user && current_user == property.user %>
+      <div id="properties-secondary-button">
+        <%= link_to 'Editar', edit_property_path(property) %>
+      </div>
+      <div id="properties-secondary-button">
+        <%= link_to 'Eliminar', property_path(property), method: :delete %>
+      </div>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<nav id='menu'>
+  <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+  <ul>
+    <li><%= link_to 'Inicio', '/' %></li>
+    <li><%= link_to 'Mis Propiedades', properties_path %></li>
+    <% if user_signed_in? %>
+    <li id="logged-button"><%= current_user.email %></li>
+    <li id="logged-button"><%= button_to "Cerrar Sesion", destroy_user_session_path, method: "delete" %></li>
+    <% else %>
+    <li id="logged-button"><%= button_to "Ingresar", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,31 @@
+<%= form_with(model: @property, local: true, html: { enctype: "multipart/form-data" }) do |form| %>
+  <%= form.label :type %>
+  <%= form.text_field :type %>
+  
+  <%= form.label :price %>
+  <%= form.number_field :price, min: 0 %>
+  
+  <%= form.label :currency %>
+  <%= form.select :currency, ['USD', 'CLP'] %>
+  
+  <%= form.label :commune %>
+  <%= form.select :commune, @commune_options, prompt: 'Seleccionar Comuna' %>
+  
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+  
+  <%= form.label :area %>
+  <%= form.number_field :area, min: 0 %>
+  
+  <%= form.label :bedrooms %>
+  <%= form.number_field :bedrooms, min: 0 %>
+  
+  <%= form.label :bathrooms %>
+  <%= form.number_field :bathrooms, min: 0 %>
+  
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+   <%= form.label :photo %>
+  <%= form.file_field :photo %>
+  <%= form.submit %>
+<% end %>

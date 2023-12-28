@@ -1,0 +1,26 @@
+<h1><%= @property.type %> en <%= @property.commune %></h1>
+
+<% if @property.photo.attached? %>
+  <%= image_tag @property.photo.url, class: "property-image" %>
+<% end %>
+
+<p>Direccion: <%= @property.address %></p>
+<p>Precio: <%= @property.price %> <%= @property.currency %></p>
+<p>Área: <%= @property.area %> m²</p>
+<p>Habitaciones: <%= @property.bedrooms %></p>
+<p>Baños: <%= @property.bathrooms %></p>
+
+<%= simple_format @property.description %>
+
+<% if current_user && current_user == @property.user %>
+  <div id="properties-secondary-button">
+    <%= link_to 'Editar Propiedad', edit_property_path(@property) %>
+  </div>
+  <div id="properties-secondary-button">
+    <%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
+  </div>
+<% end %>
+
+<div id="properties-secondary-button">
+  <%= link_to 'Volver', url_for(:back) %>
+</div>

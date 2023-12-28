@@ -23,11 +23,9 @@
   <%= form.label :bathrooms %>
   <%= form.number_field :bathrooms, min: 0 %>
   
-  <%= form.label :photo %>
-  <%= form.file_field :photo %>
-  
   <%= form.label :description %>
   <%= form.text_area :description %>
+   <%= form.label :photo %>
   <%= form.file_field :photo %>
   <%= form.submit %>
 <% end %>

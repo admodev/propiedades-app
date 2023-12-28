@@ -2,6 +2,7 @@
   <div>
     <h2>Welcome <%= current_user.email %> to PropiedadesApp!</h2>
     <%= button_to "Cerrar Sesion", destroy_user_session_path, method: "delete" %>
+    <%= link_to 'Propiedades', properties_path %>
   </div>
 <% else %>
     <%= button_to "Ingresar", new_user_session_path %>

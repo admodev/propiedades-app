@@ -1,6 +1,8 @@
 <h1><%= @property.type %> en <%= @property.commune %></h1>
 
-<%= image_tag @property.photo.url(:medium) if @property.photo.attached? %>
+<% if @property.photo.attached? %>
+  <%= image_tag @property.photo.url, class: "property-image" %>
+<% end %>
 
 <p>Precio: <%= @property.price %> <%= @property.currency %></p>
 <p>Área: <%= @property.area %> m²</p>

@@ -8,7 +8,9 @@
 
 <% @properties.each do |property| %>
   <div class="property-card">
-    <%= image_tag property.photo.url(:medium), class: "property-image" if property.photo.attached? %>
+    <% if property.photo.attached? %>
+      <%= image_tag property.photo.url, class: "property-image" %>
+    <% end %>
     <h3><%= property.type %></h3>
     <p>Precio: <%= property.price %> <%= property.currency %></p>
     <p>Área: <%= property.area %> m²</p>

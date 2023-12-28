@@ -4,6 +4,7 @@
   <% end %>
   <h3><%= property.type %></h3>
   <p>Precio: <%= property.price %> <%= property.currency %></p>
+  <p>Precio en USD: <%= number_to_currency(property.price_usd, unit: 'USD') %></p>
   <p>Área: <%= property.area %> m²</p>
   <p>Habitaciones: <%= property.bedrooms %></p>
   <p>Baños: <%= property.bathrooms %></p>

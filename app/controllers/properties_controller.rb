@@ -9,11 +9,17 @@ class PropertiesController < ApplicationController
   before_action :load_commune_options, only: [:new, :edit]
 
   def index
+    clp_to_usd_rate = CurrencyExchangeService.get_exchange_rate
+
     if current_user
       @properties = current_user.properties.page(params[:page])
       filter_properties if params[:filter].present?
     else
       @properties = Property.page(params[:page])
+    end
+
+    @properties.each do |property|
+      property.price_usd = CurrencyExchangeService.convert_to_usd(property.price, clp_to_usd_rate)
     end
   end
 

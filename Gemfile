@@ -44,6 +44,9 @@ gem 'devise'
 # Pagination
 gem 'will_paginate'
 
+# Http Requests
+gem 'http'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

@@ -7,18 +7,7 @@
 <%= will_paginate @properties %>
 
 <% @properties.each do |property| %>
-  <div class="property-card">
-    <% if property.photo.attached? %>
-      <%= image_tag property.photo.url, class: "property-image" %>
-    <% end %>
-    <h3><%= property.type %></h3>
-    <p>Precio: <%= property.price %> <%= property.currency %></p>
-    <p>Área: <%= property.area %> m²</p>
-    <p>Habitaciones: <%= property.bedrooms %></p>
-    <p>Baños: <%= property.bathrooms %></p>
-    <%= link_to 'Ver Detalles', property_path(property) %>
-    <%= link_to 'Eliminar', property_path(property), method: :delete, data: { confirm: '¿Estás seguro?' } %>
-  </div>
+  <%= render 'card', property: property %>
 <% end %>
 
 <%= will_paginate @properties %>

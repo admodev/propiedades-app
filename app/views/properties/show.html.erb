@@ -13,5 +13,5 @@
 <%= simple_format @property.description %>
 
 <%= link_to 'Editar Propiedad', edit_property_path(@property) %>
-<%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+<%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
 <%= link_to 'Volver', properties_path %>

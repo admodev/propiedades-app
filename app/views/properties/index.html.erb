@@ -1,4 +1,4 @@
-<h1>Propiedades: </h1>
+<h1>Mis Propiedades: </h1>
 
 <% if user_signed_in? %>
     <%= link_to 'Agregar Propiedad', new_property_path %>
@@ -6,8 +6,10 @@
 
 <%= will_paginate @properties %>
 
-<% @properties.each do |property| %>
-  <%= render 'card', property: property %>
-<% end %>
+<div id="properties-grid">
+  <% @properties.each do |property| %>
+    <%= render 'card', property: property %>
+  <% end %>
+</div>
 
 <%= will_paginate @properties %>

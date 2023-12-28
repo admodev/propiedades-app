@@ -1,10 +1,16 @@
 class PropertiesController < ApplicationController
+  include ActiveStorageOnDisk
+
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :set_active_storage_url_options, only: [:index, :show]
 
   def index
-    @properties = Property.paginate(page: params[:page], per_page: 10)
+    if current_user
+      @properties = current_user.properties.page(params[:page])
+    else
+      @properties = Property.page(params[:page])
+    end
   end
 
   def show
@@ -41,10 +47,6 @@ class PropertiesController < ApplicationController
   end
 
   private
-
-  def set_active_storage_url_options
-    ActiveStorage::Current.url_options = { host: request.host_with_port, protocol: request.protocol }
-  end
 
   def set_property
     @property = Property.find(params[:id])

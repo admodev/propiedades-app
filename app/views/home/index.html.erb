@@ -1,1 +1,11 @@
-<h1>PropiedadesApp!</h1>
+<h1>Propiedades: </h1>
+
+<%= will_paginate @properties %>
+
+<div id="properties-grid">
+  <% @properties.each do |property| %>
+    <%= render 'properties/card', property: property %>
+  <% end %>
+<div>
+
+<%= will_paginate @properties %>

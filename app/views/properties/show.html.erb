@@ -12,6 +12,9 @@
 
 <%= simple_format @property.description %>
 
-<%= link_to 'Editar Propiedad', edit_property_path(@property) %>
-<%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
-<%= link_to 'Volver', properties_path %>
+<% if current_user && current_user == @property.user %>
+  <%= link_to 'Editar Propiedad', edit_property_path(@property) %>
+  <%= link_to 'Eliminar Propiedad', property_path(@property), method: :delete %>
+<% end %>
+
+<%= link_to 'Volver', url_for(:back) %>

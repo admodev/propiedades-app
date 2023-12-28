@@ -1,9 +1,12 @@
+require 'csv'
+
 class PropertiesController < ApplicationController
   include ActiveStorageOnDisk
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :set_active_storage_url_options, only: [:index, :show]
+  before_action :load_commune_options, only: [:new, :edit]
 
   def index
     if current_user
@@ -47,6 +50,10 @@ class PropertiesController < ApplicationController
   end
 
   private
+
+  def load_commune_options
+    @commune_options = CSV.read(Rails.root.join('lib/assets', 'comunas.csv').to_s, headers: true).map { |row| row['commune'] }
+  end
 
   def set_property
     @property = Property.find(params[:id])

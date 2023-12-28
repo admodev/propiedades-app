@@ -9,7 +9,7 @@
   <%= form.select :currency, ['USD', 'CLP'] %>
   
   <%= form.label :commune %>
-  <%= form.text_field :commune %>
+  <%= form.select :commune, @commune_options, prompt: 'Seleccionar Comuna' %>
   
   <%= form.label :address %>
   <%= form.text_field :address %>

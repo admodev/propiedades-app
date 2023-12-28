@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
   def index
     if current_user
       @properties = current_user.properties.page(params[:page])
+      filter_properties if params[:filter].present?
     else
       @properties = Property.page(params[:page])
     end
@@ -61,5 +62,11 @@ class PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:type, :price, :currency, :commune, :address, :area, :bedrooms, :bathrooms, :description, :photo)
+  end
+
+  def filter_properties
+    @properties = @properties.where('price <= ?', params[:max_price].to_i) if params[:max_price].present?
+    @properties = @properties.where('bedrooms >= ?', params[:min_bedrooms].to_i) if params[:min_bedrooms].present?
+    @properties = @properties.where('bathrooms >= ?', params[:min_bathrooms].to_i) if params[:min_bathrooms].present?
   end
 end

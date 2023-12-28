@@ -2,6 +2,19 @@
 
 <%= will_paginate @properties %>
 
+<%= form_tag properties_path, method: :get, class: 'filter-form' do %>
+  <%= label_tag 'Max Price' %>
+  <%= text_field_tag 'max_price', params[:max_price] %>
+
+  <%= label_tag 'Min Bedrooms' %>
+  <%= number_field_tag 'min_bedrooms', params[:min_bedrooms] %>
+
+  <%= label_tag 'Min Bathrooms' %>
+  <%= number_field_tag 'min_bathrooms', params[:min_bathrooms] %>
+
+  <%= submit_tag 'Filter' %>
+<% end %>
+
 <div id="properties-grid">
   <% @properties.each do |property| %>
     <%= render 'properties/card', property: property %>

@@ -37,5 +37,18 @@
   transition : 1000ms;
   transform: translateY(0);
   cursor: pointer;
-  }
-  
+}
+
+.filter-form {
+  margin-bottom: 20px;
+}
+
+.filter-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-form input, .filter-form select {
+  width: 200px;
+  margin-bottom: 10px;
+}

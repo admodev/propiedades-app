@@ -2,7 +2,7 @@ databases:
   - name: postgres
     ipAllowList: []
     databaseName: propiedades_app_development
-    user: postgres
+    user: propiedadesuser
 
 services:
   - type: web

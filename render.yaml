@@ -3,7 +3,6 @@ databases:
     ipAllowList: []
     databaseName: propiedades_app_development
     user: postgres
-    password: postgres
 
 services:
   - type: web
